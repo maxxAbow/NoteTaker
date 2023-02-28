@@ -4,6 +4,21 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+//Get started
+startButton = document.getElementById('getStarted');
+const renderHome = () => {
+  startButton.addEventListener('click',changeRoute => {
+    fetch('/notes',{
+      method: 'GET',
+      headers: {
+      'Content-Type': 'application/json',
+    },
+    })
+  });
+  
+};
+
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
