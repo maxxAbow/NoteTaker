@@ -5,18 +5,12 @@ let newNoteBtn;
 let noteList;
 
 //Get started
-startButton = document.getElementById('getStarted');
-const renderHome = () => {
-  startButton.addEventListener('click',changeRoute => {
-    fetch('/notes',{
-      method: 'GET',
-      headers: {
-      'Content-Type': 'application/json',
-    },
-    })
-  });
-  
-};
+const startButton = document.getElementById('getStarted')
+
+startButton.addEventListener('click', async (e) => {
+  e.preventDefault()
+  window.location.replace('./notes')
+});
 
 
 if (window.location.pathname === '/notes') {
